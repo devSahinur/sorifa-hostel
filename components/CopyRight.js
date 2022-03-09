@@ -1,6 +1,6 @@
 function Copyright() {
   return (
-    <div className="mb-[67px] bg-gray-500 py-4 md:mb-0 lg:block">
+    <div className=" bg-gray-500 py-4  lg:block">
       <div className="container flex items-center justify-between">
         <p className="flex justify-items-end text-white">
           © Sorifa Hostel - by{' '}
