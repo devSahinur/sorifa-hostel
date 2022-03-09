@@ -1,6 +1,8 @@
+import { useRouter } from 'next/router'
 import Features from './../components/Features'
 
 function SinglePrice({ room }) {
+    const router = useRouter()
   return (
     <div className="flex flex-col rounded bg-white shadow-sm transition duration-300 hover:shadow">
       <div className="relative h-48 w-full">
@@ -23,12 +25,12 @@ function SinglePrice({ room }) {
             {room.price} taka
           </div>
         </div>
-        <a
-          href="/"
-          className="focus:shadow-outline inline-flex h-12 w-full items-center justify-center rounded bg-red-400 px-6 font-medium tracking-wide text-white shadow-md transition duration-200 hover:bg-red-600 focus:outline-none"
+        <div
+          onClick={()=>router.push(`/${room.id}`)}
+          className="focus:shadow-outline cursor-pointer inline-flex h-12 w-full items-center justify-center rounded bg-red-400 px-6 font-medium tracking-wide text-white shadow-md transition duration-200 hover:bg-red-600 focus:outline-none"
         >
           Booking Now
-        </a>
+        </div>
       </div>
     </div>
   )

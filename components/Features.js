@@ -2,7 +2,7 @@ import React from 'react'
 
 function Features({singleF}) {
   return (
-    <li className="flex items-center">
+    <li className="flex  items-center">
       <div className="mr-2">
         <svg
           className="text-deep-purple-accent-400 h-4 w-4"
