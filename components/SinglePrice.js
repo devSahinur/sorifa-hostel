@@ -15,12 +15,8 @@ function SinglePrice({ room }) {
           <div>
             <p className="mb-2 font-bold tracking-wide">Features</p>
             <ul className="space-y-2">
-                <Features/>
-                <Features/>
-                <Features/>
-                <Features/>
-                <Features/>
-                <Features/>
+                {room.features.map(singleF => <Features key={singleF} singleF={singleF}/>)}
+
                 </ul>
           </div>
           <div className="mt-1 mb-4 mr-1 text-4xl font-bold sm:text-5xl">
