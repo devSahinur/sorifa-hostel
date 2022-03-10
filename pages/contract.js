@@ -269,7 +269,7 @@ function contract() {
         <div className="mx-auto mb-12 max-w-5xl px-6 sm:px-6 lg:px-8">
           <div className="-mt-72 w-full rounded bg-white p-8 shadow sm:p-12">
             <p className="text-center text-3xl font-bold leading-7">Contact US</p>
-            <htmlForm action="" method="post">
+            <form action="" method="post">
               <div className="mt-12 items-center md:flex">
                 <div className="flex w-full flex-col md:w-1/2">
                   <label className="font-semibold leading-none">Name</label>
@@ -309,7 +309,7 @@ function contract() {
                   Send message
                 </button>
               </div>
-            </htmlForm>
+            </form>
           </div>
         </div>
       </div>
