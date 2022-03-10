@@ -8,7 +8,7 @@ function Location() {
           হোস্টেলের অবস্থান
         </h2>
         <p className="text-base text-gray-700 md:text-lg">
-          দুরামারি পাশে,সেলুনের দোকান এর সাথে !
+          দুরামারির পাশে,সেলুনের দোকান এর সাথে !
         </p>
       </div>
       <div className="container mx-auto flex flex-wrap px-5 py-24 sm:flex-nowrap">
@@ -55,7 +55,7 @@ function Location() {
               className="mb-4 h-48 w-48 flex-shrink-0 rounded-lg object-cover object-center sm:mb-0"
               src="https://dummyimage.com/200x200"
             />
-            <div className="flex-grow ml-3  md:ml-0 lg:ml-0  sm:pl-8">
+            <div className="ml-3 flex-grow  sm:pl-8 md:ml-0  lg:ml-0">
               <h2 className="title-font text-lg font-medium text-gray-900">
                 Holden Caulfield
               </h2>
@@ -64,7 +64,6 @@ function Location() {
                 DIY tote bag drinking vinegar cronut adaptogen squid fanny pack
                 vaporware.
               </p>
-
             </div>
           </div>
           <div className="inline-flex pt-5">
@@ -73,7 +72,7 @@ function Location() {
               className="mb-4 h-48 w-48 flex-shrink-0 rounded-lg object-cover object-center sm:mb-0"
               src="https://dummyimage.com/200x200"
             />
-            <div className="flex-grow ml-3 md:ml-0 lg:ml-0 sm:pl-8">
+            <div className="ml-3 flex-grow sm:pl-8 md:ml-0 lg:ml-0">
               <h2 className="title-font text-lg font-medium text-gray-900">
                 Holden Caulfield
               </h2>
