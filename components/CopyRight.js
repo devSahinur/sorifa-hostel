@@ -6,7 +6,7 @@ function Copyright() {
           © Sorifa Hostel - by{' '}
           <a
             className="text-yellow-500"
-            href="https://github.com/devSahinur"
+            href="https://sahinur.netlify.app"
             target="_blank"
           >
             &nbsp; Sahinur Islam
