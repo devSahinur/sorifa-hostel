@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import Header from './../components/Header'
 import Banner from './../components/Banner'
 import Pricing from './../components/Pricing'
+import Location from './../components/Location'
 import CopyRight from './../components/CopyRight'
 import Marquee from 'react-fast-marquee'
 
@@ -22,6 +22,7 @@ const Index = () => {
       </Marquee>
       <Banner />
       <Pricing />
+      <Location/>
       <CopyRight/>
     </>
   )
