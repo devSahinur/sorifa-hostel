@@ -98,7 +98,7 @@ function SeatBooking() {
   const [pay, setPay] = useState([])
 
   useEffect(async () => {
-    const res = await fetch(`http://localhost:3000/api/user`)
+    const res = await fetch(`https://sorifa-hostel.vercel.app/api/user`)
     const data = await res.json()
     setPay(data.Login[0].payData)
   }, [])
