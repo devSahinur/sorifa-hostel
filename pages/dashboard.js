@@ -1,6 +1,9 @@
 import Header from '../components/Header'
 import SmallCard from '../components/SmallCard'
 import Marquee from 'react-fast-marquee'
+import { useRouter } from 'next/router'
+import { useSession } from 'next-auth/react'
+import { useEffect } from 'react'
 
 const takaPay = [
   {
@@ -41,7 +44,7 @@ const takaPay = [
   {
     id: '6',
     month: 'June ',
-    pay: false,
+    pay: true,
     payData: '22-03-2020',
     price: '700',
   },
@@ -90,6 +93,12 @@ const takaPay = [
 ]
 
 function SeatBooking() {
+  const router = useRouter()
+  const { data: session } = useSession()
+
+  useEffect(()=>{
+    !session && router.push('/')
+  },[session])
   return (
     <div>
       <Header />

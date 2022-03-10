@@ -1,9 +1,14 @@
 import { useRouter } from 'next/router'
 import React, { useState } from 'react'
+import { useSession } from 'next-auth/react'
+
+import { signIn, signOut } from 'next-auth/react'
 
 function Header() {
   const router = useRouter()
+  const { data: session } = useSession()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+
   return (
     <div className="mx-auto px-4  py-5 sm:max-w-xl md:max-w-full md:px-24 lg:max-w-screen-xl lg:px-8">
       <div className="relative flex items-center justify-between">
@@ -37,17 +42,19 @@ function Header() {
               Home
             </div>
           </li>
+          {session && (
+            <li>
+              <div
+                onClick={() => router.push('/dashboard')}
+                className="hover:text-deep-purple-accent-400 cursor-pointer font-medium tracking-wide text-gray-700 transition-colors duration-200"
+              >
+                My Dashboard
+              </div>
+            </li>
+          )}
           <li>
             <div
-              onClick={() => router.push('/dashboard')}
-              className="hover:text-deep-purple-accent-400 cursor-pointer font-medium tracking-wide text-gray-700 transition-colors duration-200"
-            >
-             My Dashboard
-            </div>
-          </li>
-          <li>
-            <div
-             onClick={() => router.push('/about')}
+              onClick={() => router.push('/about')}
               className="hover:text-deep-purple-accent-400 cursor-pointer font-medium tracking-wide text-gray-700 transition-colors duration-200"
             >
               About Us
@@ -56,7 +63,7 @@ function Header() {
           <li>
             <div
               onClick={() => router.push('/contract')}
-              className="hover:text-deep-purple-accent-400 font-medium cursor-pointer tracking-wide text-gray-700 transition-colors duration-200"
+              className="hover:text-deep-purple-accent-400 cursor-pointer font-medium tracking-wide text-gray-700 transition-colors duration-200"
             >
               Contact us
             </div>
@@ -64,12 +71,28 @@ function Header() {
         </ul>
         <ul className="flex  items-center space-x-8 lg:flex">
           <li>
-            <div
-             
-              className="inline-flex hidden cursor-pointer h-12 items-center justify-center  rounded bg-red-400 px-6 font-medium tracking-wide text-white shadow-md transition duration-200 hover:bg-red-600 md:flex lg:flex "
-            >
-              Login
-            </div>
+            {session ? (
+              <div
+                onClick={signOut}
+                className="inline-flex hidden h-12 cursor-pointer items-center justify-center  rounded bg-red-400 px-6 font-medium tracking-wide text-white shadow-md transition duration-200 hover:bg-red-600 md:flex lg:flex "
+              >
+                <img
+                  className="h-7 w-7 rounded-full"
+                  src={session.user.image}
+                  alt=""
+                />
+                Log Out
+              </div>
+            ) : (
+              <div
+                onClick={() => {
+                  signIn('google', { callbackUrl: '/' })
+                }}
+                className="inline-flex hidden h-12 cursor-pointer items-center justify-center  rounded bg-red-400 px-6 font-medium tracking-wide text-white shadow-md transition duration-200 hover:bg-red-600 md:flex lg:flex "
+              >
+                Login
+              </div>
+            )}
           </li>
         </ul>
         <div className="lg:hidden">
@@ -95,7 +118,7 @@ function Header() {
             </svg>
           </button>
           {isMenuOpen && (
-            <div className="absolute z-50 top-0 left-0 w-full">
+            <div className="absolute top-0 left-0 z-50 w-full">
               <div className="rounded border bg-white p-5 shadow-sm">
                 <div className="mb-4 flex items-center justify-between">
                   <div>
@@ -141,23 +164,26 @@ function Header() {
                   <ul className="space-y-4">
                     <li>
                       <div
-                       onClick={() => router.push('/')}
+                        onClick={() => router.push('/')}
                         className="hover:text-deep-purple-accent-400 font-medium tracking-wide text-gray-700 transition-colors duration-200"
                       >
                         Home
                       </div>
                     </li>
+                    {session && (
+                      <li>
+                        <div
+                          onClick={() => router.push('/dashboard')}
+                          className="hover:text-deep-purple-accent-400 font-medium tracking-wide text-gray-700 transition-colors duration-200"
+                        >
+                          My Dashboard
+                        </div>
+                      </li>
+                    )}
+
                     <li>
                       <div
-                         onClick={() => router.push('/dashboard')}
-                        className="hover:text-deep-purple-accent-400 font-medium tracking-wide text-gray-700 transition-colors duration-200"
-                      >
-                        My Dashboard
-                      </div>
-                    </li>
-                    <li>
-                      <div
-                         onClick={() => router.push('/about')}
+                        onClick={() => router.push('/about')}
                         className="hover:text-deep-purple-accent-400 font-medium tracking-wide text-gray-700 transition-colors duration-200"
                       >
                         About Us
@@ -165,19 +191,30 @@ function Header() {
                     </li>
                     <li>
                       <div
-                         onClick={() => router.push('/contract')}
+                        onClick={() => router.push('/contract')}
                         className="hover:text-deep-purple-accent-400 font-medium tracking-wide text-gray-700 transition-colors duration-200"
                       >
                         Contact us
                       </div>
                     </li>
                     <li>
-                      <a
-                        href="/"
-                        className="inline-flex h-12  w-full items-center justify-center rounded bg-red-400 px-6 font-medium tracking-wide text-white shadow-md transition duration-200 hover:bg-red-600"
-                      >
-                        Login
-                      </a>
+                      {session ? (
+                        <div
+                          onClick={signOut}
+                          className="inline-flex h-12  w-full items-center justify-center rounded bg-red-400 px-6 font-medium tracking-wide text-white shadow-md transition duration-200 hover:bg-red-600"
+                        >
+                          Log Out
+                        </div>
+                      ) : (
+                        <div
+                          onClick={() => {
+                            signIn('google', { callbackUrl: '/' })
+                          }}
+                          className="inline-flex h-12  w-full items-center justify-center rounded bg-red-400 px-6 font-medium tracking-wide text-white shadow-md transition duration-200 hover:bg-red-600"
+                        >
+                          Login
+                        </div>
+                      )}
                     </li>
                   </ul>
                 </nav>
