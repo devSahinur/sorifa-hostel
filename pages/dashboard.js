@@ -1,4 +1,4 @@
-import Header from './../components/Header'
+import Header from '../components/Header'
 import Marquee from 'react-fast-marquee'
 
 function SeatBooking() {
