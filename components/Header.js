@@ -39,7 +39,7 @@ function Header() {
           </li>
           <li>
             <div
-              onClick={() => router.push('/seatBooking')}
+              onClick={() => router.push('/dashboard')}
               className="hover:text-deep-purple-accent-400 cursor-pointer font-medium tracking-wide text-gray-700 transition-colors duration-200"
             >
              My Dashboard
@@ -149,7 +149,7 @@ function Header() {
                     </li>
                     <li>
                       <div
-                         onClick={() => router.push('/seatBooking')}
+                         onClick={() => router.push('/dashboard')}
                         className="hover:text-deep-purple-accent-400 font-medium tracking-wide text-gray-700 transition-colors duration-200"
                       >
                         My Dashboard
