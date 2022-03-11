@@ -98,10 +98,13 @@ function SeatBooking() {
   const { data: session } = useSession()
   const [pay, setPay] = useState([])
 
+  const sortData = pay?.find((p) => p?.email === session?.user?.email)
+
   useEffect(async () => {
-    const res = await fetch(`/api/user`)
+    const res = await fetch(`/api/alluser`)
     const data = await res.json()
-    setPay(data.Login[0].payData)
+    setPay(data?.data)
+    // setPay(data.Login[0].payData)
   }, [])
 
   useEffect(() => {
@@ -120,7 +123,7 @@ function SeatBooking() {
 
         {/* Pull some data from a server - API endPoints */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {pay?.map((bill) => (
+          {sortData?.payData?.map((bill) => (
             <SmallCard key={bill.id} bill={bill} />
           ))}
         </div>
