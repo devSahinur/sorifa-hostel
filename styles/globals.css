@@ -1,3 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer components {
+  .size-selector input:checked + label {
+    @apply bg-primary text-white;
+  }
+  .color-selector input:checked + label {
+    @apply ring-2 ring-primary;
+  }
+  .input-box {
+    @apply w-full block border border-gray-300 px-4 py-3 text-gray-600 text-sm rounded focus:ring-0 focus:border-primary outline-primary  placeholder-gray-400;
+  }
+  .cinput {
+    @apply border px-2 py-3 text-black focus-within:ring-1 focus-within:ring-primary outline-none rounded-md focus-within:shadow;
+  }
+  .cinputTi {
+    @apply text-gray-800 pb-4 text-lg;
+  }
+  .btn {
+    @apply px-6 py-2 bg-primary text-white rounded-md hover:bg-transparent hover:text-primary hover:border-primary border cursor-pointer transition-all ease-linear;
+  }
+  .btn-outline {
+    @apply px-6 py-2 bg-transparent text-primary rounded-md hover:bg-primary hover:text-white border border-primary cursor-pointer transition-all ease-linear;
+  }
+  .labelText {
+    @apply text-base text-gray-600 font-semibold;
+  }
+  .input-box-admin {
+    @apply w-full block border border-gray-300 px-4 py-3 text-gray-600 text-sm rounded focus:ring-0 focus:border-header400 outline-header400  placeholder-gray-400;
+  }
+}
+

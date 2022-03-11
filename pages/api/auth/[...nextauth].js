@@ -23,7 +23,6 @@ export default NextAuth({
       const checkUser = await User.findOne({
         name: user.name,
         email: user.email,
-        image: user.image,
       })
       if (checkUser) {
         return true // user db

@@ -11,11 +11,15 @@ const UserSchema = new mongoose.Schema({
   },
   image: {
     type: String,
-    required: true,
+    default: 'https://i.ibb.co/MRX27MK/images.png',
   },
   verified: {
+    type: Boolean,
+    default: false
+  },
+  customName: {
     type: String,
-    required: false,
+    default: '',
   },
   address: {
     type: String,
@@ -37,7 +41,23 @@ const UserSchema = new mongoose.Schema({
     type: String,
     default: '',
   },
+  collageName: {
+    type: String,
+    default: '',
+  },
+  shift: {
+    type: String,
+    default: '',
+  },
   department: {
+    type: String,
+    default: '',
+  },
+  birthday: {
+    type: String,
+    default: '',
+  },
+  room: {
     type: String,
     default: '',
   },

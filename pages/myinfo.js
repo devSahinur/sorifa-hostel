@@ -125,9 +125,9 @@ function myinfo() {
                     </div>
                   </div>
                 </div>
-                <button className="focus:shadow-outline hover:shadow-xs my-4 block w-full rounded-lg p-3 text-sm font-semibold text-blue-800 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none">
+                <div onClick={() => router.push('/profileEdit')} className="focus:shadow-outline cursor-pointer hover:shadow-xs my-4 text-center block w-full rounded-lg p-3 text-sm font-semibold text-blue-800 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none">
                   Edit Profile
-                </button>
+                </div>
               </div>
 
               <div className="my-4"></div>
