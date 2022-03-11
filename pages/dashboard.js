@@ -1,7 +1,6 @@
 import Header from '../components/Header'
 import CopyRight from '../components/CopyRight'
 import SmallCard from '../components/SmallCard'
-import Marquee from 'react-fast-marquee'
 import { useRouter } from 'next/router'
 import { useSession } from 'next-auth/react'
 import { useEffect, useState } from 'react'
@@ -110,14 +109,8 @@ function SeatBooking() {
   return (
     <div>
       <Header />
-      <Marquee
-        speed={80}
-        gradient={false}
-        className={'h-8 bg-gray-400 text-white'}
-      >
-        **** বর্তমানে হোস্টেলে চারটা সিট ফাঁকা আছে ****
-      </Marquee>
-      <section className="mx-auto max-w-7xl mb-5 pt-6">
+
+      <section className="mx-auto mb-5 max-w-7xl pt-6">
         <h2 className="pb-5 text-4xl font-semibold">
           Your bill payment activity
         </h2>
@@ -129,7 +122,7 @@ function SeatBooking() {
           ))}
         </div>
       </section>
-      <CopyRight/>
+      <CopyRight />
     </div>
   )
 }

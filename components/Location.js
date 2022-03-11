@@ -30,8 +30,7 @@ function Location() {
                 ADDRESS
               </h2>
               <p className="mt-1">
-                Photo booth tattooed prism, portland taiyaki hoodie neutra
-                typewriter
+                Duramari, Gobinda Nagar, Thakurgaon Sadar,Thakurgaon
               </p>
             </div>
             <div className="mt-4 px-6 lg:mt-0 lg:w-1/2">
@@ -39,12 +38,12 @@ function Location() {
                 EMAIL
               </h2>
               <a className="leading-relaxed text-indigo-500">
-                example@email.com
+                masipulislam@email.com
               </a>
               <h2 className="title-font mt-4 text-xs font-semibold tracking-widest text-gray-900">
                 PHONE
               </h2>
-              <p className="leading-relaxed">123-456-7890</p>
+              <p className="leading-relaxed">+8801751379009</p>
             </div>
           </div>
         </div>
@@ -70,13 +69,13 @@ function Location() {
             <img
               alt="team"
               className="mb-4 h-48 w-48 flex-shrink-0 rounded-lg object-cover object-center sm:mb-0"
-              src="https://dummyimage.com/200x200"
+              src="https://i.ibb.co/7yFsXcx/siam-1.jpg"
             />
             <div className="ml-3 flex-grow sm:pl-8 md:ml-0 lg:ml-0">
               <h2 className="title-font text-lg font-medium text-gray-900">
-                Holden Caulfield
+                Masipul Islam Siam
               </h2>
-              <h3 className="mb-3 text-gray-500">UI Developer</h3>
+              <h3 className="mb-3 text-gray-500">Hostel controller</h3>
               <p className="mb-4">
                 DIY tote bag drinking vinegar cronut adaptogen squid fanny pack
                 vaporware.

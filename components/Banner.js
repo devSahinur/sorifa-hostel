@@ -4,6 +4,8 @@ import { Carousel } from "react-responsive-carousel";
 
 
 
+
+
 function Banner() {
   return (
     <div className="relative">
@@ -20,6 +22,27 @@ function Banner() {
           <img
             loading="lazy"
             src="https://i.ibb.co/NpPDyMm/IMG-20210912-224730-1.jpg"
+            alt=""
+          />
+        </div>
+        <div>
+          <img
+            loading="lazy"
+            src="https://i.ibb.co/YRrNCFd/room03.png"
+            alt=""
+          />
+        </div>
+        <div>
+          <img
+            loading="lazy"
+            src="https://i.ibb.co/rdZNqHc/room02.png"
+            alt=""
+          />
+        </div>
+        <div>
+          <img
+            loading="lazy"
+            src="https://i.ibb.co/0nXSKV3/room01.png"
             alt=""
           />
         </div>

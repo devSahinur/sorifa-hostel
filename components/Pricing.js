@@ -4,19 +4,19 @@ const packegeData = [
   {
     id: 1,
     price: 700,
-    img: 'https://i.ibb.co/z42sCGh/Snapchat-793691721-1.jpg',
+    img: 'https://i.ibb.co/YRrNCFd/room03.png',
     features:['দুই সিটের রুম','একটা চেয়ার','একটা টেবিল','একটা বেড','একটা সিলিং ফ্যান']
   },
   {
     id: 2,
     price: 1000,
-    img: 'https://i.ibb.co/NpPDyMm/IMG-20210912-224730-1.jpg',
+    img: 'https://i.ibb.co/rdZNqHc/room02.png',
     features:['এক সিটের রুম','একটা চেয়ার','একটা টেবিল','একটা বেড','একটা সিলিং ফ্যান']
   },
   {
     id: 3,
     price: 1200,
-    img: 'https://i.ibb.co/z42sCGh/Snapchat-793691721-1.jpg',
+    img: 'https://i.ibb.co/0nXSKV3/room01.png',
     features:['এক সিটের রুম', 'কমন বাথরুম','একটা চেয়ার','একটা টেবিল','একটা বেড','একটা সিলিং ফ্যান']
   },
 ]

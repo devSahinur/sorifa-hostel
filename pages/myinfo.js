@@ -1,11 +1,18 @@
 import Header from './../components/Header'
 import CopyRight from './../components/CopyRight'
 import { useSession } from 'next-auth/react'
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
 function myinfo() {
   const { data: session } = useSession()
+  const router = useRouter()
+  useEffect(() => {
+    !session && router.push('/')
+  }, [session])
   return (
     <div>
       <Header />
+
       <div className="bg-gray-100">
         <div className="container mx-auto my-5 p-5">
           <div className="no-wrap md:-mx-2 md:flex ">
@@ -90,7 +97,7 @@ function myinfo() {
                         Current Address
                       </div>
                       <div className="px-4 py-2">
-                      thakurgaon, Rangpur, Bangladesh
+                        thakurgaon, Rangpur, Bangladesh
                       </div>
                     </div>
                     <div className="grid grid-cols-2">
@@ -98,15 +105,13 @@ function myinfo() {
                         Permanant Address
                       </div>
                       <div className="px-4 py-2">
-                      Taragonj, Rangpur, Bangladesh
+                        Taragonj, Rangpur, Bangladesh
                       </div>
                     </div>
                     <div className="grid grid-cols-2">
                       <div className="px-4 py-2 font-semibold">Email.</div>
                       <div className="px-4 py-2">
-                        <div
-                          className="cursor-pointer text-blue-800"
-                        >
+                        <div className="cursor-pointer text-blue-800">
                           {session?.user?.email}
                         </div>
                       </div>
