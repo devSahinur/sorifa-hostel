@@ -5,6 +5,7 @@ import { useRouter } from 'next/router'
 import { useSession } from 'next-auth/react'
 import { useEffect, useState } from 'react'
 import Head from 'next/head'
+import FadeLoader from 'react-spinners/FadeLoader'
 
 // const takaPay = [
 //   {
@@ -97,6 +98,7 @@ function SeatBooking() {
   const router = useRouter()
   const { data: session } = useSession()
   const [pay, setPay] = useState([])
+  let [loading, setLoading] = useState(true)
 
   const sortData = pay?.find((p) => p?.email === session?.user?.email)
 
@@ -105,6 +107,7 @@ function SeatBooking() {
     const data = await res.json()
     setPay(data?.data)
     // setPay(data.Login[0].payData)
+    setLoading(false)
   }, [])
 
   useEffect(() => {
@@ -126,6 +129,10 @@ function SeatBooking() {
           {sortData?.payData?.map((bill) => (
             <SmallCard key={bill.id} bill={bill} />
           ))}
+        </div>
+
+        <div className="flex items-center justify-center">
+          <FadeLoader color={`#FD3D57`} loading={loading} size={300} />
         </div>
       </section>
       <CopyRight />
