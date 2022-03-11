@@ -3,6 +3,7 @@ import CopyRight from './../components/CopyRight'
 import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
+import Head from 'next/head'
 function myinfo() {
   const { data: session } = useSession()
   const router = useRouter()
@@ -12,7 +13,9 @@ function myinfo() {
   return (
     <div>
       <Header />
-
+      <Head>
+        <title>{session.user.name} - Sorifa Hostel</title>
+      </Head>
       <div className="bg-gray-100">
         <div className="container mx-auto my-5 p-5">
           <div className="no-wrap md:-mx-2 md:flex ">

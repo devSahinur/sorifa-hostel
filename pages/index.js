@@ -9,7 +9,7 @@ const Index = () => {
   return (
     <>
       <Head>
-        <title>Sorifa Hostel</title>
+        <title>Home - Sorifa Hostel</title>
       </Head>
       <Header />
 

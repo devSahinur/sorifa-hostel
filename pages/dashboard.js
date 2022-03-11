@@ -4,6 +4,7 @@ import SmallCard from '../components/SmallCard'
 import { useRouter } from 'next/router'
 import { useSession } from 'next-auth/react'
 import { useEffect, useState } from 'react'
+import Head from 'next/head'
 
 // const takaPay = [
 //   {
@@ -109,7 +110,9 @@ function SeatBooking() {
   return (
     <div>
       <Header />
-
+      <Head>
+        <title>My Dashboard - Sorifa Hostel</title>
+      </Head>
       <section className="mx-auto mb-5 max-w-7xl pt-6">
         <h2 className="pb-5 text-4xl font-semibold">
           Your bill payment activity

@@ -4,6 +4,7 @@ import React, { useRef } from 'react'
 import emailjs from '@emailjs/browser'
 import Swal from 'sweetalert2'
 import { useRouter } from 'next/router'
+import Head from 'next/head'
 
 function contract() {
   const router = useRouter()
@@ -35,18 +36,21 @@ function contract() {
 
   return (
     <div>
+      <Head>
+        <title>Contact US - Sorifa Hostel</title>
+      </Head>
       <Header />
-
-      {/* <section className="body-font text-gray-600">
+{/* 
+      <section className="body-font text-gray-600">
         <div className="container mx-auto px-5 py-24">
           <div className="mb-20 flex w-full flex-col text-center">
             <h1 className="title-font mb-4 text-2xl font-medium tracking-widest text-gray-900">
-              Hostel owner
+              বিকাশে পেমেন্ট এর নিয়মাবলি
             </h1>
             <p className="mx-auto text-base leading-relaxed lg:w-2/3">
-              Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical
-              gentrify, subway tile poke farm-to-table. Franzen you probably
-              haven't heard of them.
+              প্রথমে কল করে আপনার টাকার পরিমাণ জেনে
+              নিন। এখন পেমেন্ট করুন। পেমেন্ট করার পরে আবার করুন। কল করার পরে
+              আপনার ড্যার্শবোড এ পেমেন্ট আবডেট হয়েছে কি না চেক করুন
             </p>
           </div>
           <div className="-m-4 flex flex-wrap">

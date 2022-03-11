@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import Header from '../components/Header'
 import CopyRight from './../components/CopyRight'
 const rulesData = [
@@ -90,6 +91,9 @@ function rules() {
   return (
     <div>
       <Header />
+      <Head>
+        <title>Hostel rules - Sorifa Hostel</title>
+      </Head>
       <section className="body-font text-gray-600">
         <div className="container mx-auto px-5 py-14">
           <div className="mb-10 text-center">

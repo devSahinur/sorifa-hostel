@@ -26,7 +26,7 @@ function SinglePrice({ room }) {
           </div>
         </div>
         <div
-          onClick={()=>router.push(`/${room.id}`)}
+          onClick={()=>router.push(`/contract`)}
           className="focus:shadow-outline cursor-pointer inline-flex h-12 w-full items-center justify-center rounded bg-red-400 px-6 font-medium tracking-wide text-white shadow-md transition duration-200 hover:bg-red-600 focus:outline-none"
         >
           Booking Now
