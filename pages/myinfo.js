@@ -14,7 +14,7 @@ function myinfo() {
     <div>
       <Header />
       <Head>
-        <title>{session.user.name} - Sorifa Hostel</title>
+        <title>{session?.user?.name} - Sorifa Hostel</title>
       </Head>
       <div className="bg-gray-100">
         <div className="container mx-auto my-5 p-5">
