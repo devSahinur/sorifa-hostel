@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSession } from 'next-auth/react'
 import Marquee from 'react-fast-marquee'
 
@@ -9,6 +9,16 @@ function Header() {
   const router = useRouter()
   const { data: session } = useSession()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  const [pay, setPay] = useState([])
+
+  const sortData = pay?.find((p) => p?.email === session?.user?.email)
+
+  useEffect(async () => {
+    const res = await fetch(`/api/alluser`)
+    const data = await res.json()
+    setPay(data?.data)
+  }, [])
 
   return (
     <>
@@ -54,14 +64,19 @@ function Header() {
                     Profile
                   </div>
                 </li>
-                <li>
-                  <div
-                    onClick={() => router.push('/dashboard')}
-                    className="hover:text-deep-purple-accent-400 cursor-pointer font-medium tracking-wide text-gray-700 transition-colors duration-200"
-                  >
-                    Dashboard
-                  </div>
-                </li>
+
+                {sortData?.verified == false ? (
+                  ''
+                ) : (
+                  <li>
+                    <div
+                      onClick={() => router.push('/dashboard')}
+                      className="hover:text-deep-purple-accent-400 cursor-pointer font-medium tracking-wide text-gray-700 transition-colors duration-200"
+                    >
+                      Dashboard
+                    </div>
+                  </li>
+                )}
               </>
             )}
             <li>
@@ -192,14 +207,18 @@ function Header() {
                               Profile
                             </div>
                           </li>
-                          <li>
-                            <div
-                              onClick={() => router.push('/dashboard')}
-                              className="hover:text-deep-purple-accent-400 font-medium tracking-wide text-gray-700 transition-colors duration-200"
-                            >
-                              My Dashboard
-                            </div>
-                          </li>
+                          {sortData?.verified == false ? (
+                            ''
+                          ) : (
+                            <li>
+                              <div
+                                onClick={() => router.push('/dashboard')}
+                                className="hover:text-deep-purple-accent-400 font-medium tracking-wide text-gray-700 transition-colors duration-200"
+                              >
+                                Dashboard
+                              </div>
+                            </li>
+                          )}
                         </>
                       )}
 
