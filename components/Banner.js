@@ -49,13 +49,6 @@ function Banner() {
         <div>
           <img
             loading="lazy"
-            src="https://i.ibb.co/z42sCGh/Snapchat-793691721-1.jpg"
-            alt=""
-          />
-        </div>
-        <div>
-          <img
-            loading="lazy"
             src="https://i.ibb.co/HBM4tff/IMG-20211127-224323.jpg"
             alt=""
           />
