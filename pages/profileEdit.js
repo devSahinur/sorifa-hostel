@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
+import FadeLoader from 'react-spinners/FadeLoader'
 
 function profileEdit() {
   const router = useRouter()
@@ -14,11 +15,13 @@ function profileEdit() {
   } = useForm()
 
   const [user, setUser] = useState()
+  let [loading, setLoading] = useState(true)
 
   useEffect(async () => {
     const res = await fetch('/api/user')
     const data = await res.json()
     setUser(data.Login[0])
+    setLoading(false)
   }, [])
 
   const onSubmit = async (data) => {
@@ -49,6 +52,13 @@ function profileEdit() {
       <Head>
         <title>Edit Profile - Sorifa Hostel</title>
       </Head>
+      {loading ? (
+        <div className="mt-40 flex items-center justify-center">
+          <FadeLoader color={`#FD3D57`} loading={loading} size={300} />
+        </div>
+      ) :(
+
+      <>
       <div className="flex items-center justify-center">
         <img
           className=" mt-5 h-32 w-32 rounded-full "
@@ -280,6 +290,8 @@ function profileEdit() {
           </div>
         </form>
       </div>
+      </>
+      )}
     </div>
   )
 }
