@@ -43,14 +43,24 @@ function Header() {
             </div>
           </li>
           {session && (
-            <li>
-              <div
-                onClick={() => router.push('/dashboard')}
-                className="hover:text-deep-purple-accent-400 cursor-pointer font-medium tracking-wide text-gray-700 transition-colors duration-200"
-              >
-                My Dashboard
-              </div>
-            </li>
+            <>
+              <li>
+                <div
+                  onClick={() => router.push('/myinfo')}
+                  className="hover:text-deep-purple-accent-400 cursor-pointer font-medium tracking-wide text-gray-700 transition-colors duration-200"
+                >
+                  Profile
+                </div>
+              </li>
+              <li>
+                <div
+                  onClick={() => router.push('/dashboard')}
+                  className="hover:text-deep-purple-accent-400 cursor-pointer font-medium tracking-wide text-gray-700 transition-colors duration-200"
+                >
+                  Dashboard
+                </div>
+              </li>
+            </>
           )}
           <li>
             <div
@@ -171,14 +181,24 @@ function Header() {
                       </div>
                     </li>
                     {session && (
-                      <li>
-                        <div
-                          onClick={() => router.push('/dashboard')}
-                          className="hover:text-deep-purple-accent-400 font-medium tracking-wide text-gray-700 transition-colors duration-200"
-                        >
-                          My Dashboard
-                        </div>
-                      </li>
+                      <>
+                        <li>
+                          <div
+                            onClick={() => router.push('/myinfo')}
+                            className="hover:text-deep-purple-accent-400 font-medium tracking-wide text-gray-700 transition-colors duration-200"
+                          >
+                            Profile
+                          </div>
+                        </li>
+                        <li>
+                          <div
+                            onClick={() => router.push('/dashboard')}
+                            className="hover:text-deep-purple-accent-400 font-medium tracking-wide text-gray-700 transition-colors duration-200"
+                          >
+                            My Dashboard
+                          </div>
+                        </li>
+                      </>
                     )}
 
                     <li>

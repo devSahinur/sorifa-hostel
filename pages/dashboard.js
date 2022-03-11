@@ -1,4 +1,5 @@
 import Header from '../components/Header'
+import CopyRight from '../components/CopyRight'
 import SmallCard from '../components/SmallCard'
 import Marquee from 'react-fast-marquee'
 import { useRouter } from 'next/router'
@@ -98,7 +99,7 @@ function SeatBooking() {
   const [pay, setPay] = useState([])
 
   useEffect(async () => {
-    const res = await fetch(`https://sorifa-hostel.vercel.app/api/user`)
+    const res = await fetch(`/api/user`)
     const data = await res.json()
     setPay(data.Login[0].payData)
   }, [])
@@ -116,7 +117,7 @@ function SeatBooking() {
       >
         **** বর্তমানে হোস্টেলে চারটা সিট ফাঁকা আছে ****
       </Marquee>
-      <section className="mx-auto max-w-7xl pt-6">
+      <section className="mx-auto max-w-7xl mb-5 pt-6">
         <h2 className="pb-5 text-4xl font-semibold">
           Your bill payment activity
         </h2>
@@ -128,6 +129,7 @@ function SeatBooking() {
           ))}
         </div>
       </section>
+      <CopyRight/>
     </div>
   )
 }
