@@ -12,8 +12,10 @@ function SmallCard({ bill }) {
         <>
           <h3 >{bill.price} taka</h3>
           <h1>{bill.payData}</h1>
+          
         </>
       )}
+      {bill.pay ? '': <p className='text-red-500 semibold text-center text-2xl '>Not paid</p>}
     </div>
   )
 }

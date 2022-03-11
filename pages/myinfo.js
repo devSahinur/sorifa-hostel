@@ -207,6 +207,7 @@ function myinfo() {
           </div>
         </div>
       </div>
+      <CopyRight/>
     </div>
   )
 }
