@@ -113,10 +113,6 @@ function SeatBooking() {
   if (sortData?.verified == false) {
     router.push('/')
   }
-
-  // useEffect(() => {
-  
-  // }, [session])
   return (
     <div>
       <Header />
