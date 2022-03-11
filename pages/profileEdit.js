@@ -245,6 +245,30 @@ function profileEdit() {
                   <option>15</option>
                 </select>
               </div>
+              <div>
+                <label className="mb-2 block text-gray-600">
+                  What Your Experience?
+                </label>
+                <input
+                  {...register('experience')}
+                  type="text"
+                  className="input-box"
+                  placeholder="Enter Your Experience?"
+                  defaultValue={user?.experience}
+                />
+              </div>
+              <div>
+                <label className="mb-2 block text-gray-600">
+                  Enter Your Bio ?
+                </label>
+                <input
+                  {...register('bio')}
+                  type="text"
+                  className="input-box"
+                  placeholder="Enter your bio Data ?"
+                  defaultValue={user?.bio}
+                />
+              </div>
             </div>
           </div>
           <div className="mt-6">

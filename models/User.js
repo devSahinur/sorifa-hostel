@@ -61,6 +61,14 @@ const UserSchema = new mongoose.Schema({
     type: String,
     default: '',
   },
+  experience: {
+    type: String,
+    default: '',
+  },
+  bio: {
+    type: String,
+    default: '',
+  },
   payData: {
     type: [{}],
     default: [
