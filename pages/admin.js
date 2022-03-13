@@ -1,12 +1,22 @@
+import { useSession } from 'next-auth/react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 import { FadeLoader } from 'react-spinners'
+import Header from './../components/Header'
 
 function admin() {
+  const router = useRouter()
   const [user, setUser] = useState([])
   let [loading, setLoading] = useState(true)
 
   console.log(user)
+  const { data: session } = useSession()
+console.log(session?.user?.email)
+  useEffect(() => {
+    !session && router.push('/')
+  session?.user?.email = 'masipulislam@gmail.com'  && router.push('/')
+  }, [session])
 
   useEffect(async () => {
     const res = await fetch(`/api/alluser`)
@@ -17,6 +27,7 @@ function admin() {
   }, [])
   return (
     <div>
+      <Header/>
       <section className="mx-auto mb-5 max-w-7xl pt-6">
         <h2 className="pb-5 text-4xl font-semibold">
           Total User {user?.length}
