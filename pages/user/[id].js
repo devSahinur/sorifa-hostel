@@ -6,7 +6,9 @@ import { FadeLoader } from 'react-spinners'
 import Header from '../../components/Header'
 
 function id({ data }) {
-  console.log(data)
+  const { payData } = data
+  const [selectMounth, setSelectMount] = useState(null)
+  const [allPayDatas, setAllPayDatas] = useState(payData)
 
   const {
     register,
@@ -21,12 +23,23 @@ function id({ data }) {
   useEffect(async () => {
     const res = await fetch('/api/user')
     const data = await res.json()
-    setUser(data.Login[0])
+    setUser(data?.Login[0])
     setLoading(false)
   }, [])
 
+  // todo this code for update the value
+  let allPayData = [...allPayDatas]
+
+  let findWithMMounth = allPayData?.find((item) => item?.month == selectMounth)
+
+  const updatePay = (val) => {
+    findWithMMounth.pay = val
+    setAllPayDatas(allPayData)
+  }
+
   const onSubmit = async (data) => {
-    console.log(data)
+    console.log(allPayData)
+    setSelectMount(null)
     // const res = await fetch(`/api/user?userId=${user._id}`, {
     //   method: 'PUT',
     //   headers: {
@@ -78,7 +91,7 @@ function id({ data }) {
                       defaultChecked={data?.verified}
                     />
                   </div>
-                  <div>
+                  {/* <div>
                     <label className="mb-2 block text-gray-600">
                       Month Name
                     </label>
@@ -89,6 +102,69 @@ function id({ data }) {
                       placeholder="Enter your username like mrX123"
                       defaultValue={user?.customName}
                     />
+                  </div> */}
+                  <div>
+                    <label className="mb-2 block text-gray-600">
+                      Month Name
+                    </label>
+                    <select
+                      name=""
+                      id=""
+                      onChange={(e) => setSelectMount(e.target.value)}
+                    >
+                      {payData?.map((item) => (
+                        <option key={item.id} value={item?.month}>
+                          {item?.month}
+                        </option>
+                      ))}
+                    </select>
+
+                    {selectMounth && (
+                      <div>
+                        <div>
+                          <label className="mb-2 block text-gray-600">
+                            Pay
+                          </label>
+                          <input
+                            type="checkbox"
+                            checked={findWithMMounth?.pay}
+                            onChange={(e) =>
+                              findWithMMounth?.pay
+                                ? updatePay(false)
+                                : updatePay(true)
+                            }
+                          />
+                        </div>
+                        {/* date */}
+                        <div>
+                          <label className="mb-2 block text-gray-600">
+                            Date of Birth
+                          </label>
+                          <input
+                            type="text"
+                            defaultValue={findWithMMounth.payData}
+                            onChange={(e) => {
+                              findWithMMounth.payData = e.target.value
+                              setAllPayDatas(allPayData)
+                            }}
+                          />
+                        </div>
+                        {/* price */}
+                        <div>
+                          <label className="mb-2 block text-gray-600">
+                            Price
+                          </label>
+                          <input
+                            type="number"
+                            defaultValue={findWithMMounth.price}
+                            onChange={(e) => {
+                              findWithMMounth.price = e.target.value
+                              setAllPayDatas(allPayData)
+                            }}
+                          />
+                        </div>
+                      </div>
+                    )}
                   </div>
                   <div>
                     {/* <label className="mb-2 block text-gray-600">semester</label>
