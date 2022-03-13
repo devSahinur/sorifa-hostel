@@ -105,7 +105,7 @@ function Header() {
                 >
                   <img
                     className="h-7 w-7 rounded-full"
-                    src={session.user.image}
+                    src={sortData?.image}
                     alt=""
                   />
                   Log Out

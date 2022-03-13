@@ -5,6 +5,7 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import FadeLoader from 'react-spinners/FadeLoader'
+import axios from 'axios'
 
 function profileEdit() {
   const router = useRouter()
@@ -16,37 +17,37 @@ function profileEdit() {
 
   const [user, setUser] = useState()
   let [loading, setLoading] = useState(true)
-  const [images, setImageURL] = useState(user?.image);
+  const [images, setImageURL] = useState('')
+  const [isClick, setIsClick] = useState(true)
+
+  console.log(images)
 
   useEffect(async () => {
     const res = await fetch('/api/user')
     const data = await res.json()
     setUser(data.Login[0])
+    if (isClick) {
+      setImageURL(data.Login[0].image)
+    }
     setLoading(false)
   }, [])
 
-
-
   const handleImageUpload = (event) => {
-    const imageData = new FormData();
-    imageData.set("key", "701a71fc100ddc2599c9438b268fee30");
-    imageData.append("image", event.target.files[0]);
+    setIsClick(false)
+    const imageData = new FormData()
+    imageData.set('key', '701a71fc100ddc2599c9438b268fee30')
+    imageData.append('image', event.target.files[0])
 
     axios
-      .post("https://api.imgbb.com/1/upload", imageData)
+      .post('https://api.imgbb.com/1/upload', imageData)
       .then((response) => {
-        let image = [];
-        let newImages = [...images];
-        newImages.push(response.data.data.display_url);
-        image = newImages;
-        setImageURL(image);
+        setImageURL(response.data.data.display_url)
+        console.log(imageURL)
       })
       .catch((error) => {
-        console.log(error);
-      });
-  };
-
-
+        console.log(error)
+      })
+  }
 
   const onSubmit = async (data) => {
     console.log(data)
@@ -58,8 +59,8 @@ function profileEdit() {
       body: JSON.stringify({
         ...data,
         _id: user._id,
+        image: images,
         email: user.email,
-        image: user.image,
         verified: user.verified,
         payData: user.payData,
       }),
@@ -85,11 +86,18 @@ function profileEdit() {
           <div className="flex items-center justify-center">
             <img
               className=" mt-5 h-32 w-32 rounded-full "
-              src={user.image}
+              src={images}
               alt=""
             />
-            <span className="-ml-5 mb-10">
-          
+            <span
+              onClick={() => document.querySelector('.input_file').click()}
+              className="-ml-5 mb-10 cursor-pointer"
+            >
+              <input
+                type="file"
+                onChange={handleImageUpload}
+                className="input_file hidden  cursor-pointer"
+              />
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"
@@ -315,7 +323,7 @@ function profileEdit() {
               <div className="mt-6">
                 <input
                   type="submit"
-                  value="Save change"
+                  defaultValue="Save change"
                   className="cursor-pointer rounded border border-primary bg-primary px-6 py-2 text-center font-roboto font-medium uppercase text-white transition hover:bg-transparent hover:text-primary"
                 />
               </div>

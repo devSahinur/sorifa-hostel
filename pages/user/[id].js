@@ -79,7 +79,9 @@ function id({ data }) {
                     />
                   </div>
                   <div>
-                    <label className="mb-2 block text-gray-600">Month Name</label>
+                    <label className="mb-2 block text-gray-600">
+                      Month Name
+                    </label>
                     <input
                       type="text"
                       {...register('customName', { required: true })}
