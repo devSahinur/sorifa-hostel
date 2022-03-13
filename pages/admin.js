@@ -12,16 +12,13 @@ function admin() {
 
   console.log(user)
   const { data: session } = useSession()
-console.log(session?.user?.email)
+
 
 
 useEffect(()=>{
-  if(session?.user?.email == 'masipulislam@gmail.com'){
-    console.log('ok')
-  }else{
-    router.push('/')
-  }
-},[])
+ {!(session?.user?.email === 'masipulislam@gmail.com') && router.push('/')}
+
+},[session])
 
 
   useEffect(async () => {
