@@ -14,13 +14,7 @@ function admin() {
   const { data: session } = useSession()
 console.log(session?.user?.email)
 
-if(!session){
-   router.push('/')
-}
-  useEffect(() => {
-    
-  session?.user?.email === 'masipulislam@gmail.com'  && router.push('/')
-  }, [session])
+
 
   useEffect(async () => {
     const res = await fetch(`/api/alluser`)
