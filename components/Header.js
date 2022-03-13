@@ -78,7 +78,7 @@ function Header() {
                   </li>
                 )}
 
-{sortData?.admin == false ? (
+                {sortData?.admin == false ? (
                   ''
                 ) : (
                   <li>
@@ -229,6 +229,18 @@ function Header() {
                                 className="hover:text-deep-purple-accent-400 font-medium tracking-wide text-gray-700 transition-colors duration-200"
                               >
                                 Dashboard
+                              </div>
+                            </li>
+                          )}
+                          {sortData?.admin == false ? (
+                            ''
+                          ) : (
+                            <li>
+                              <div
+                                onClick={() => router.push('/admin')}
+                                className="hover:text-deep-purple-accent-400 font-medium tracking-wide text-gray-700 transition-colors duration-200"
+                              >
+                                Admin
                               </div>
                             </li>
                           )}
