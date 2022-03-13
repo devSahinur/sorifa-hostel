@@ -51,6 +51,10 @@ function profileEdit() {
       })
   }
 
+  useEffect(() => {
+    !session && router.push('/')
+  }, [session])
+
   const onSubmit = async (data) => {
     console.log(data)
     const res = await fetch(`/api/user?userId=${user._id}`, {
@@ -65,6 +69,7 @@ function profileEdit() {
         email: user.email,
         verified: user.verified,
         payData: user.payData,
+        admin: user.admin
       }),
     })
 

@@ -65,7 +65,9 @@ function id({ data }) {
         room: data.room,
         experience: data.experience,
         bio: data.bio,
+        admin: data.admin,
         payData: allPayData,
+
       }),
     })
 

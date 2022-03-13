@@ -8,18 +8,26 @@ import Header from './../components/Header'
 function admin() {
   const router = useRouter()
   const [user, setUser] = useState([])
+  const [userS, setUserS] = useState([])
   let [loading, setLoading] = useState(true)
 
   console.log(user)
   const { data: session } = useSession()
 
+  console.log(userS)
 
+  if (userS?.admin == false) {
+    router.push('/')
+  }
 
-useEffect(()=>{
- {!(session?.user?.email === 'masipulislam@gmail.com') && router.push('/')}
-
-},[session])
-
+  useEffect(() => {
+    !session && router.push('/')
+  }, [session])
+  //   useEffect(() => {
+  //  if(user.email != 'sayerkazipara@gmail.com'){
+  // router.push('/')
+  //  }
+  //   }, [])
 
   useEffect(async () => {
     const res = await fetch(`/api/alluser`)
@@ -28,9 +36,15 @@ useEffect(()=>{
     // setPay(data.Login[0].payData)
     setLoading(false)
   }, [])
+
+  useEffect(async () => {
+    const res = await fetch(`/api/user`)
+    const data = await res.json()
+    setUserS(data?.Login[0])
+  }, [])
   return (
     <div>
-      <Header/>
+      <Header />
       <section className="mx-auto mb-5 max-w-7xl pt-6">
         <h2 className="pb-5 text-4xl font-semibold">
           Total User {user?.length}
