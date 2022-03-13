@@ -19,7 +19,7 @@ if(!session){
 }
   useEffect(() => {
     
-  session?.user?.email = 'masipulislam@gmail.com'  && router.push('/')
+  session?.user?.email === 'masipulislam@gmail.com'  && router.push('/')
   }, [session])
 
   useEffect(async () => {
