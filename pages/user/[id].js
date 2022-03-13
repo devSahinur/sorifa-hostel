@@ -37,28 +37,42 @@ function id({ data }) {
     setAllPayDatas(allPayData)
   }
 
-  const onSubmit = async (data) => {
+  const onSubmit = async (d) => {
     console.log(allPayData)
     setSelectMount(null)
-    // const res = await fetch(`/api/user?userId=${user._id}`, {
-    //   method: 'PUT',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify({
-    //     ...data,
-    //     _id: user._id,
-    //     email: user.email,
-    //     image: user.image,
-    //     verified: user.verified,
-    //     payData: user.payData,
-    //   }),
-    // })
+    const res = await fetch(`/api/user?userId=${data?._id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        ...data,
+        _id: data._id,
+        name: data.name,
+        email: data.email,
+        image: data.image,
+        verified: d.verified,
+        customName: data.customName,
+        address: data.address,
+        phoneNumber: data.phoneNumber,
+        guardianName: data.guardianName,
+        guardianNumber: data.guardianNumber,
+        semester: data.semester,
+        collageName: data.collageName,
+        shift: data.shift,
+        department: data.department,
+        birthday: data.birthday,
+        room: data.room,
+        experience: data.experience,
+        bio: data.bio,
+        payData: allPayData,
+      }),
+    })
 
-    // if (res.ok) {
-    //   console.log('User Update done')
-    //   router.push('/admin')
-    // }
+    if (res.ok) {
+      console.log('User Update done')
+      router.push('/admin')
+    }
   }
 
   return (
@@ -91,6 +105,7 @@ function id({ data }) {
                       defaultChecked={data?.verified}
                     />
                   </div>
+
                   {/* <div>
                     <label className="mb-2 block text-gray-600">
                       Month Name
@@ -110,6 +125,7 @@ function id({ data }) {
                     <select
                       name=""
                       id=""
+                      className="input-box"
                       onChange={(e) => setSelectMount(e.target.value)}
                     >
                       {payData?.map((item) => (
@@ -142,6 +158,7 @@ function id({ data }) {
                           </label>
                           <input
                             type="text"
+                            className="input-box"
                             defaultValue={findWithMMounth.payData}
                             onChange={(e) => {
                               findWithMMounth.payData = e.target.value
@@ -156,6 +173,7 @@ function id({ data }) {
                           </label>
                           <input
                             type="number"
+                            className="input-box"
                             defaultValue={findWithMMounth.price}
                             onChange={(e) => {
                               findWithMMounth.price = e.target.value

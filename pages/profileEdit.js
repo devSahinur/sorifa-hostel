@@ -6,8 +6,10 @@ import { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import FadeLoader from 'react-spinners/FadeLoader'
 import axios from 'axios'
+import { useSession } from 'next-auth/react'
 
 function profileEdit() {
+  const { data: session } = useSession()
   const router = useRouter()
   const {
     register,
@@ -130,7 +132,7 @@ function profileEdit() {
                       {...register('name', { required: true })}
                       className="input-box"
                       placeholder="Enter your full name?"
-                      defaultValue={user?.name}
+                      defaultValue={session?.user?.name}
                     />
                   </div>
                   <div>

@@ -21,7 +21,6 @@ export default NextAuth({
     async signIn({ user, account, profile, email, credentials }) {
       await dbConnect()
       const checkUser = await User.findOne({
-        name: user.name,
         email: user.email,
       })
       if (checkUser) {

@@ -113,7 +113,7 @@ function Header() {
               ) : (
                 <div
                   onClick={() => {
-                    signIn('google', { callbackUrl: '/' })
+                    signIn('google', { callbackUrl: '/profileEdit' })
                   }}
                   className="inline-flex hidden h-12 cursor-pointer items-center justify-center  rounded bg-red-400 px-6 font-medium tracking-wide text-white shadow-md transition duration-200 hover:bg-red-600 md:flex lg:flex "
                 >
