@@ -15,6 +15,14 @@ function admin() {
 console.log(session?.user?.email)
 
 
+useEffect(()=>{
+  if(session?.user?.email == 'masipulislam@gmail.com'){
+    console.log('ok')
+  }else{
+    router.push('/')
+  }
+},[])
+
 
   useEffect(async () => {
     const res = await fetch(`/api/alluser`)
