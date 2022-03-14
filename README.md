@@ -1,27 +1,20 @@
-# Next.js + Tailwind CSS Example
+<p align="center">
+  <img src="https://i.ibb.co/MDhJdjt/Screenshot-18.png" />
+</p>
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+<h3 align="center">This is a simple hostel management system website</h3>
 
-## Preview
+ <p align="center">
+  <img src="https://img.shields.io/badge/-Next.js-000000?style=flat-square&logo=next.js" />
+  <img src="https://img.shields.io/badge/-TailwindCSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white" />
+  <img src="https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" />
+   <img src="https://img.shields.io/badge/-MongoDB-000000?style=flat-square&logo=mongodb" />
+ </p>
+ 
 
-Preview the example live on [StackBlitz](http://stackblitz.com/):
+ ⭐ Features
+- We are using Next-Auth authentication to authenticate any user
+- We have three types of user mode usage here. One is admin one is verified user another is normal user
+- Normal user can only edit all the information in his profile. And be able to visit the website
+- 
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
-
-## Deploy your own
-
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
-
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
-
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-# or
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
