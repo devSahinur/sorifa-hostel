@@ -18,6 +18,3 @@
 - Normal user can only edit all the information in his profile. And be able to visit the website
 - 
 
- ## Screenshots
-
-![Banner Image](https://i.ibb.co/rfbw2h2/IMAGE-QUOTES.png)
