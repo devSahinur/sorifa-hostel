@@ -4,6 +4,7 @@ import Banner from './../components/Banner'
 import Pricing from './../components/Pricing'
 import Location from './../components/Location'
 import CopyRight from './../components/CopyRight'
+import OurStudents from './../components/OurStudents'
 
 const Index = () => {
   return (
@@ -15,6 +16,7 @@ const Index = () => {
 
       <Banner />
       <Pricing />
+      <OurStudents />
       <Location />
       <CopyRight />
     </>

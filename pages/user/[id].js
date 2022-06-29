@@ -67,7 +67,6 @@ function id({ data }) {
         bio: data.bio,
         admin: data.admin,
         payData: allPayData,
-
       }),
     })
 
