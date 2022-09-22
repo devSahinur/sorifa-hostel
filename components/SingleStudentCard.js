@@ -19,7 +19,7 @@ function SingleStudentCard({ student }) {
           />
         </div>
         <div className="pt-6 text-center">
-          <p className="mb-1 text-lg font-bold leading-normal">
+          <p title={student.name} className="mb-1 text-lg font-bold leading-normal">
             {student.name}
           </p>
           <p className="font-light leading-relaxed text-gray-500">

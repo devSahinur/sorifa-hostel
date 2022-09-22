@@ -38,6 +38,7 @@ function contract() {
     <div>
       <Head>
         <title>Contact US - Sorifa Hostel</title>
+        
       </Head>
       <Header />
 {/* 

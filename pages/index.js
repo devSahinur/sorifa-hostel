@@ -11,6 +11,16 @@ const Index = () => {
     <>
       <Head>
         <title>Home - Sorifa Hostel</title>
+        <meta name="description" content="Sorifa Hostel" />
+        <meta property="og:title" content="Sorifa Hostel" />
+        <meta property="og:type" content="https://sorifa-hostel.vercel.app/" />
+        <meta property="og:url" content="https://sorifa-hostel.vercel.app/" />
+        <meta
+          property="og:image"
+          content="https://i.ibb.co/rdZNqHc/room02.png"
+        />
+        <meta property="og:description" content="Home - Sorifa Hostel" />
+        <meta property="og:site_name" content="Sorifa Hostel" />
       </Head>
       <Header />
 
