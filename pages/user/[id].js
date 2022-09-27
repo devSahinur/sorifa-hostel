@@ -76,6 +76,20 @@ function id({ data }) {
     }
   }
 
+  const deleteStudent = async () => {
+    const res = await fetch(`/api/user?userId=${data?._id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+
+    if (res.ok) {
+      console.log('User Delete done')
+      router.push('/admin')
+    }
+  }
+
   return (
     <div>
       <Header />
@@ -213,6 +227,23 @@ function id({ data }) {
                 </div>
               </div>
             </form>
+            <div>
+              {data?.verified ? (
+                <button
+                  disabled
+                  className="btn left-0 w-[190px] cursor-not-allowed bg-gray-600 text-center"
+                >
+                  Delete Account
+                </button>
+              ) : (
+                <button
+                  onClick={deleteStudent}
+                  className="btn left-0 w-[190px] text-center "
+                >
+                  Delete Account
+                </button>
+              )}
+            </div>
           </div>
         </>
       )}

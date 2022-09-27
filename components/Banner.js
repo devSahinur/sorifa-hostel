@@ -1,15 +1,10 @@
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from "react-responsive-carousel";
-
-
-
-
-
+import 'react-responsive-carousel/lib/styles/carousel.min.css' // requires a loader
+import { Carousel } from 'react-responsive-carousel'
 
 function Banner() {
   return (
-    <div className="relative">
-      <div className="absolute w-full h-32 bg-gradient-to-t to-transparent  z-20" />
+    <div className="md:container">
+      <div className="absolute z-20 h-32 w-full bg-gradient-to-t  to-transparent" />
       <Carousel
         autoPlay
         infiniteLoop
@@ -67,13 +62,9 @@ function Banner() {
             alt=""
           />
         </div>
-  
-
       </Carousel>
     </div>
-  );
+  )
 }
 
-export default Banner;
-
-
+export default Banner
