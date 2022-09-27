@@ -1,6 +1,8 @@
+import { useRouter } from 'next/router'
 import React from 'react'
 
 function SingleStudentCard({ student }) {
+  const router  = useRouter()
   console.log(student)
   return (
     <div>
@@ -29,10 +31,10 @@ function SingleStudentCard({ student }) {
             {student.semester} semester
           </p>
           <div className="mt-2 mb-5 space-x-2">
-            <button className="rounded  bg-red-400 py-2    px-4  font-medium tracking-wide text-white shadow-md transition duration-200 hover:bg-red-600 focus:outline-none">
+            <a href={`tel:${student?.phoneNumber}`} className="rounded  bg-red-400 py-2    px-4  font-medium tracking-wide text-white shadow-md transition duration-200 hover:bg-red-600 focus:outline-none">
               Contract
-            </button>
-            <button className="rounded  bg-red-400 py-2    px-4  font-medium tracking-wide text-white shadow-md transition duration-200 hover:bg-red-600 focus:outline-none">
+            </a>
+            <button onClick={() => router.push(`/${student?.customName}`)} className="rounded  bg-red-400 py-2    px-4  font-medium tracking-wide text-white shadow-md transition duration-200 hover:bg-red-600 focus:outline-none">
               View Profile
             </button>
           </div>

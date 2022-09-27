@@ -33,10 +33,9 @@ function OurStudents() {
 
         <div className="-mx-4 flex flex-row flex-wrap justify-center">
           <Swiper
-            // ref={sliderRef}
+
             loop={true}
             className="mySwiper"
-            // pagination={pagination}
             modules={[Pagination]}
             pagination={{ clickable: true }}
             slidesPerView={1}
