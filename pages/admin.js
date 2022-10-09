@@ -23,8 +23,9 @@ function admin() {
   useEffect(() => {
     !session && router.push('/')
   }, [session])
+  
   //   useEffect(() => {
-  //  if(user.email != 'sayerkazipara@gmail.com'){
+  //  if(user.email != 'sayerkazipara@gmail.com'){ 
   // router.push('/')
   //  }
   //   }, [])
