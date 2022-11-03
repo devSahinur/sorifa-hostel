@@ -293,7 +293,7 @@ function Header() {
       <Marquee
         speed={80}
         gradient={false}
-        className={'h-8 bg-gray-400 text-white'}
+        className={'h-8 bg-gray-400 text-white sticky top-0 z-50'}
       >
         **** বর্তমানে হোস্টেলে তিনটা সিট ফাঁকা আছে ****
       </Marquee>

@@ -6,6 +6,7 @@ import Location from './../components/Location'
 import CopyRight from './../components/CopyRight'
 import OurStudents from './../components/OurStudents'
 
+
 const Index = () => {
   return (
     <>
