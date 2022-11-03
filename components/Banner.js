@@ -3,8 +3,8 @@ import { Carousel } from 'react-responsive-carousel'
 
 function Banner() {
   return (
-    <div className="md:container">
-      <div className="absolute z-20 h-32 w-full bg-gradient-to-t  to-transparent" />
+    <div className="container">
+      <div className="absolute z-20 h-32 w-full bg-gradient-to-t  to-transparent z-10" />
       <Carousel
         autoPlay
         infiniteLoop

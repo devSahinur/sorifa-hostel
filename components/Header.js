@@ -22,7 +22,7 @@ function Header() {
 
   return (
     <>
-      <div className="mx-auto px-4  py-5 sm:max-w-xl md:max-w-full md:px-24 lg:max-w-screen-xl lg:px-8">
+      <div className="mx-auto px-4  py-5 sm:max-w-xl md:max-w-full md:px-24 lg:max-w-screen-xl lg:px-8 ">
         <div className="relative flex items-center justify-between">
           <div
             onClick={() => router.push('/')}
@@ -290,13 +290,15 @@ function Header() {
           </div>
         </div>
       </div>
-      <Marquee
-        speed={80}
-        gradient={false}
-        className={'h-8 bg-gray-400 text-white sticky top-0 z-50'}
-      >
-        **** বর্তমানে হোস্টেলে তিনটা সিট ফাঁকা আছে ****
-      </Marquee>
+      <div className="sticky top-0 z-50">
+        <Marquee
+          speed={80}
+          gradient={false}
+          className={'h-8 bg-gray-400 text-white '}
+        >
+          **** বর্তমানে হোস্টেলে তিনটা সিট ফাঁকা আছে ****
+        </Marquee>
+      </div>
     </>
   )
 }
