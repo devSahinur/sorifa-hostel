@@ -11,6 +11,7 @@ function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const [pay, setPay] = useState([])
+  const [Headline, setHeadline] = useState([])
 
   const sortData = pay?.find((p) => p?.email === session?.user?.email)
 
@@ -19,6 +20,12 @@ function Header() {
     const data = await res.json()
     setPay(data?.data)
   }, [])
+  useEffect(async () => {
+    const res = await fetch(`/api/navheadline`)
+    const data = await res.json()
+    setHeadline(data?.data)
+  }, [])
+  // console.log(Headline[0].post)
 
   return (
     <>
@@ -296,7 +303,12 @@ function Header() {
           gradient={false}
           className={'h-8 bg-gray-400 text-white '}
         >
-          **** বর্তমানে হোস্টেলে তিনটা সিট ফাঁকা আছে ****
+          {Headline?.map((headline) => (
+            <>
+              🔴&nbsp;<span>{headline?.post}</span>🔴
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </>
+          ))}
         </Marquee>
       </div>
     </>
