@@ -295,7 +295,7 @@ function Header() {
         gradient={false}
         className={'h-8 bg-gray-400 text-white'}
       >
-        **** বর্তমানে হোস্টেলে একটা সিট ফাঁকা আছে ****
+        **** বর্তমানে হোস্টেলে তিনটা সিট ফাঁকা আছে ****
       </Marquee>
     </>
   )
