@@ -9,6 +9,9 @@ function admin() {
   const router = useRouter()
   const [user, setUser] = useState([])
   const [userS, setUserS] = useState([])
+  const [Headline, setHeadline] = useState([])
+  const [HeadlineS, setHeadlineS] = useState([])
+
   let [loading, setLoading] = useState(true)
 
   console.log(user)
@@ -23,9 +26,9 @@ function admin() {
   useEffect(() => {
     !session && router.push('/')
   }, [session])
-  
+
   //   useEffect(() => {
-  //  if(user.email != 'sayerkazipara@gmail.com'){ 
+  //  if(user.email != 'sayerkazipara@gmail.com'){
   // router.push('/')
   //  }
   //   }, [])
@@ -43,6 +46,43 @@ function admin() {
     const data = await res.json()
     setUserS(data?.Login[0])
   }, [])
+  useEffect(async () => {
+    const res = await fetch(`/api/navheadline`)
+    const data = await res.json()
+    setHeadline(data?.data)
+  }, [])
+
+  const deleteHeadline = async (id) => {
+    const res = await fetch(`/api/navheadline?postId=${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+    if (res.ok) {
+      console.log('post Delete done')
+      router.push('/')
+    }
+  }
+
+  const headLinePost = async (e) => {
+    e.preventDefault()
+    const res = await fetch(`/api/navheadline?=`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        post: HeadlineS,
+      }),
+    })
+    const data = await res.json()
+    setHeadlineS(data?.data)
+    // router.reload()
+    router.push('/')
+  }
+
+  console.log(HeadlineS)
   return (
     <div>
       <Header />
@@ -83,6 +123,44 @@ function admin() {
               </div>
             </Link>
           ))}
+        </div>
+
+        <section className="mx-auto mb-5 max-w-7xl pt-6">
+          <h2 className="pb-5 text-4xl font-semibold">
+            Total Headline {Headline?.length}
+          </h2>
+          <form>
+            <input
+              type="text"
+              name="post"
+              placeholder="Enter your post line"
+              className="border-[2px] border-red-500 p-5"
+              value={HeadlineS?.post}
+              onChange={(e) => setHeadlineS(e.target.value)}
+            />
+            <button onClick={headLinePost} className="mx-5 bg-green-600 p-5">
+              Post headLine
+            </button>
+          </form>
+        </section>
+        <div className="">
+          {!loading && (
+            <>
+              {Headline?.map((headline, index) => (
+                <div key={index} className='my-10 mx-5'>
+                  <div className="flex ">
+                    <h1 className="mx-10 text-green-600">{headline.post}</h1>
+                    <div
+                      onClick={() => deleteHeadline(headline._id)}
+                      className="mx-10 cursor-pointer bg-red-500 text-white"
+                    >
+                      Delete Headline
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </>
+          )}
         </div>
 
         <div className="flex items-center justify-center">

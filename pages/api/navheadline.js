@@ -3,7 +3,12 @@ import HeadlineModal from './../../models/HeadlineModal'
 dbConnect()
 
 export default async (req, res) => {
-  const { method } = req
+
+  const {
+    query: { id },
+    method,
+  } = req
+
 
   switch (method) {
     case 'GET':
@@ -40,7 +45,8 @@ export default async (req, res) => {
       break
     case 'DELETE':
       try {
-        const deletedPost = await HeadlineModal.deleteOne({ _id: id })
+        const  postId =req.query.postId;
+        const deletedPost = await HeadlineModal.deleteOne({ _id: postId })
 
         if (!deletedPost) {
           return res.status(400).json({ success: false })

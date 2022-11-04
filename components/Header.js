@@ -305,7 +305,7 @@ function Header() {
         >
           {Headline?.map((headline) => (
             <>
-              🔴&nbsp;<span>{headline?.post}</span>🔴
+              🔴&nbsp;<span>{headline?.post}</span>&nbsp;🔴
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </>
           ))}
