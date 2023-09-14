@@ -41,12 +41,12 @@ function Location() {
                 href="mailto: masipulislam@email.com"
                 className="leading-relaxed text-indigo-500"
               >
-                masipulislam@email.com
+                mehedi.hasan500422@gmail.com
               </a>
               <h2 className="title-font mt-4 text-xs font-semibold tracking-widest text-gray-900">
                 PHONE
               </h2>
-              <p className="leading-relaxed">+8801751379009</p>
+              <p className="leading-relaxed">+8801319118362</p>
             </div>
           </div>
         </div>
@@ -71,19 +71,19 @@ function Location() {
             <img
               alt="team"
               className="mb-4 h-48 w-48 flex-shrink-0 rounded-lg object-cover object-center sm:mb-0"
-              src="https://i.ibb.co/7yFsXcx/siam-1.jpg"
+              src="https://scontent.fdac31-1.fna.fbcdn.net/v/t39.30808-6/297987935_1069981880390891_1294671434028916613_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=1b51e3&_nc_eui2=AeHXmGgGltS2j0ZyqwHlLVZN9hEznZ7-1t32ETOdnv7W3RscGf5xQ1aiQMuCHXCer3dkG4YLsx7E0CgaNjd934PY&_nc_ohc=8c3MYrrGj1IAX8M4IiR&_nc_ht=scontent.fdac31-1.fna&oh=00_AfCuhI56JXfRY6DeQ4lcZN4jNP2e4hsNM6GUweSRuT-4oA&oe=65085BE1"
             />
             <div className="ml-3 flex-grow sm:pl-8 md:ml-0 lg:ml-0">
               <h2 className="title-font text-lg font-medium text-gray-900">
-                Masipul Islam Siam
+                Md Mehedi Hasan Murad
               </h2>
               <h3 className="mb-3 text-gray-500">Hostel controller</h3>
               <p className="mb-4">
-                Mobile: <a href="tel:+8801751379009">01751379009</a>
+                Mobile: <a href="tel:+8801751379009">01319118362</a>
               </p>
               <span className="inline-flex">
             
-                <a  href="https://www.facebook.com/masipulislamsiam" target="_blank" className="text-gray-500">
+                <a  href="https://www.facebook.com/" target="_blank" className="text-gray-500">
                   <svg
                     fill="none"
                     stroke="currentColor"
@@ -96,7 +96,7 @@ function Location() {
                     <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
                   </svg>
                 </a>
-                <a href="https://twitter.com/MI__Siam" target="_blank" className="ml-2 text-gray-500">
+                <a href="https://twitter.com" target="_blank" className="ml-2 text-gray-500">
                   <svg
                     fill="none"
                     stroke="currentColor"
