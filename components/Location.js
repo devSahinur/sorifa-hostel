@@ -71,7 +71,7 @@ function Location() {
             <img
               alt="team"
               className="mb-4 h-48 w-48 flex-shrink-0 rounded-lg object-cover object-center sm:mb-0"
-              src="https://scontent.fdac31-1.fna.fbcdn.net/v/t39.30808-6/297987935_1069981880390891_1294671434028916613_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=1b51e3&_nc_eui2=AeHXmGgGltS2j0ZyqwHlLVZN9hEznZ7-1t32ETOdnv7W3RscGf5xQ1aiQMuCHXCer3dkG4YLsx7E0CgaNjd934PY&_nc_ohc=8c3MYrrGj1IAX8M4IiR&_nc_ht=scontent.fdac31-1.fna&oh=00_AfCuhI56JXfRY6DeQ4lcZN4jNP2e4hsNM6GUweSRuT-4oA&oe=65085BE1"
+              src="https://i.ibb.co/tzr72Ms/image.png"
             />
             <div className="ml-3 flex-grow sm:pl-8 md:ml-0 lg:ml-0">
               <h2 className="title-font text-lg font-medium text-gray-900">
